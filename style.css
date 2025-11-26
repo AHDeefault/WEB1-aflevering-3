@@ -1,0 +1,159 @@
+/* ============================================================
+   BAGGRUND (JUNGLE)
+   ============================================================ */
+body {
+  background-image: url("Forrest.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding-top: 30px;
+}
+
+/* Mørk gennemsigtig overlay så tekst står tydeligt */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1; /* Ligger bag alt indholdet */
+}
+
+/* ============================================================
+   FORSIDE
+   ============================================================ */
+.indexContainer {
+  max-width: 750px; /* <-- gjort bredere, så teksten ikke brydes */
+  margin: 100px auto;
+}
+
+.indexContainer p {
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.indexContainer ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ============================================================
+   GORILLA-KNAPPEN
+   ============================================================ */
+.gorillaButton {
+  width: 300px;
+  cursor: pointer;
+  transition: 0.1s;
+  margin-top: 20px;
+}
+
+.gorillaButton.bounce {
+  transform: scale(1.15);
+}
+
+/* ============================================================
+   UPGRADE-BOKSE
+   ============================================================ */
+.upgrade {
+  background: rgba(0, 0, 0, 0.6);
+  width: 300px;
+  padding: 12px;
+  margin: 10px auto;
+  display: flex;
+
+  justify-content: space-between; /* Tekst venstre, knap højre */
+}
+
+/* ============================================================
+   KNAPPER
+   ============================================================ */
+.menuBtn,
+.reset {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.menuBtn {
+  background-color: #2196f3;
+}
+
+.menuBtn:hover {
+  background-color: #1976d2;
+}
+
+.reset {
+  background-color: #c62828;
+}
+
+.small {
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   MEDIA QUERY – små skærme / mobil
+   ============================================================ */
+@media (max-width: 600px) {
+  /* Forside–tekst skal være lidt mindre og tættere */
+  .indexContainer {
+    margin: 40px auto;
+    max-width: 90%;
+  }
+
+  .indexContainer p,
+  .indexContainer ul {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  /* Gorillaen skal ikke fylde hele skærmen på mobil */
+  .gorillaButton {
+    width: 200px;
+  }
+
+  /* Upgrade-bokse bliver smallere */
+  .upgrade {
+    width: 250px;
+    padding: 10px;
+  }
+
+  /* Knapper lidt større så man kan ramme dem */
+  .menuBtn,
+  .reset {
+    padding: 14px 22px;
+    font-size: 1rem;
+  }
+}
+
+/* ============================================================
+   MEDIA QUERY – store skærme (optional bonus)
+   ============================================================ */
+@media (min-width: 1600px) {
+  .gorillaButton {
+    width: 350px; /* større gorilla på store skærme */
+  }
+
+  .indexContainer p,
+  .indexContainer ul {
+    font-size: 1.3rem;
+  }
+
+  .menuBtn,
+  .reset {
+    font-size: 1.1rem;
+  }
+}
